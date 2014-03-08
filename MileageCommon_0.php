@@ -25,7 +25,7 @@ class Custom_MileageCommon extends ModuleCommon {
 		// Build array representing 2-column tooltip
 		// Format: array (Label,value)
 		$access = Utils_CommonDataCommon::get_translated_array('CRM/Access');
-		$priority = Utils_CommonDataCommon::get_translated_array('CRM/Priority');
+		//$priority = Utils_CommonDataCommon::get_translated_array('CRM/Priority');
 		$vehicle = Utils_CommonDataCommon::get_translated_array('Vehicle');
 		
 		$contacts = array();
@@ -272,8 +272,8 @@ class Custom_MileageCommon extends ModuleCommon {
 	
 	public static function mobile_mileage() {
 		$me = CRM_ContactsCommon::get_my_record();
-		//$defaults = array('employees'=>array($me['id']),'status'=>0, 'permission'=>0, 'priority'=>1);
-		//Utils_RecordBrowserCommon::mobile_rb('mileage',array('employees'=>array($me['id']),'status'=>array(0,1)),array('deadline'=>'ASC', 'priority'=>'DESC', 'title'=>'ASC'),array('priority'=>1, 'deadline'=>1,'longterm'=>1),$defaults);
+		$defaults = array('employees'=>array($me['id']),'miles'=>20,'vehicle'=>1);
+		Utils_RecordBrowserCommon::mobile_rb('mileage',array('employees'=>array($me['id'])),array('mileage_date'=>'ASC'),array(),$defaults);
 	}
 
 	/*
