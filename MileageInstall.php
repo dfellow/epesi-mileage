@@ -25,7 +25,8 @@ class Custom_MileageInstall extends ModuleInstall {
 
 			array('name' => _M('Fuel'),			'type'=>'checkbox', 'extra'=>false, 'visible'=>true),
 			
-			array('name' => _M('Receipt'),			'type'=>'checkbox', 'extra'=>false, 'visible'=>true)
+			array('name' => _M('Receipt'),			'type'=>'checkbox', 'extra'=>false, 'visible'=>true),
+			array('name' => _M('Mileage_Date'), 'type'=>'date' , 'required'=>true, 'extra'=>false, 'visible'=>true )
 		);
 		Utils_RecordBrowserCommon::install_new_recordset('mileage', $fields);
 		Utils_RecordBrowserCommon::register_processing_callback('mileage', array('Custom_MileageCommon', 'submit_mileage'));
@@ -72,13 +73,13 @@ class Custom_MileageInstall extends ModuleInstall {
 			array('name'=>'Utils/RecordBrowser', 'version'=>0),
 			array('name'=>'Utils/Attachment', 'version'=>0),
 			array('name'=>'CRM/Common', 'version'=>0),
-			array('name'=>'CRM/Roundcube', 'version'=>0),
+			//array('name'=>'CRM/Roundcube', 'version'=>0),
 			array('name'=>'CRM/Contacts', 'version'=>0),
-			array('name'=>'CRM/Calendar', 'version'=>0),
+			//array('name'=>'CRM/Calendar', 'version'=>0),
 			array('name'=>'Base/Lang', 'version'=>0),
 			array('name'=>'Base/Acl', 'version'=>0),
 			array('name'=>'Utils/ChainedSelect', 'version'=>0),
-			array('name'=>'Data/Countries', 'version'=>0),
+			//array('name'=>'Data/Countries', 'version'=>0),
 			array('name'=>'CRM/Filters','version'=>0),
 			array('name'=>'Libs/QuickForm','version'=>0),
 			array('name'=>'Base/Theme','version'=>0));
